@@ -55,52 +55,67 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-accent-soft via-background to-accent-soft/30">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Sparkles className="h-4 w-4" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-accent-soft via-background to-background">
+        {/* Animated background gradient */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-8 border border-primary/20 shadow-soft hover:shadow-medium transition-all hover:scale-105 animate-scale-in">
+              <Sparkles className="h-4 w-4 animate-pulse" />
               <span>Limited slots available each week</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Master your career journey
+            <h1 className="text-5xl md:text-7xl font-extrabold text-foreground mb-8 leading-tight tracking-tight">
+              Master your <span className="text-primary relative inline-block">
+                career journey
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 animate-pulse"></div>
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+            
+            <p className="text-2xl md:text-3xl text-foreground font-semibold mb-6">
               3 live sessions, 1:1 expert guidance
             </p>
-            <p className="text-lg text-muted-foreground mb-8">
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-3 max-w-3xl mx-auto leading-relaxed">
               CV review • Networking & referrals • Future skill strategy
-              <br />
-              <span className="font-semibold text-foreground">One simple package. $300</span>
             </p>
+            
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 border-2 border-primary/30 mb-10 shadow-medium hover:shadow-large transition-all">
+              <span className="text-2xl md:text-3xl font-bold text-primary">$300</span>
+              <span className="text-muted-foreground">|</span>
+              <span className="text-foreground font-medium">Complete Package</span>
+            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-14">
               <Link to="/book">
-                <Button size="lg" className="text-lg px-8 py-6 shadow-large">
-                  Book Your Sessions ($300)
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="text-lg px-10 py-7 shadow-large hover:shadow-glow transition-all hover:scale-105 group">
+                  Book Your Sessions
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/sessions">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                <Button size="lg" variant="outline" className="text-lg px-10 py-7 border-2 hover:border-primary/50 hover:bg-primary/5 transition-all">
                   Learn More
                 </Button>
               </Link>
             </div>
 
-            <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>3 × 60 min sessions</span>
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm md:text-base">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-background/80 backdrop-blur-sm shadow-soft">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+                <span className="font-medium">3 × 60 min sessions</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>Expert coaches</span>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-background/80 backdrop-blur-sm shadow-soft">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+                <span className="font-medium">Expert coach</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>Actionable resources</span>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-background/80 backdrop-blur-sm shadow-soft">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+                <span className="font-medium">Actionable resources</span>
               </div>
             </div>
           </div>

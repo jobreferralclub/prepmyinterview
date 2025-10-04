@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileText, Users, TrendingUp, Clock, CheckCircle2, ArrowRight, Calendar } from "lucide-react";
+import BundledSessionCards from "@/components/BundledSessionCards";
 
 const Sessions = () => {
   const sessions = [
@@ -118,6 +119,19 @@ const Sessions = () => {
               <span className="font-bold text-primary text-lg">$300</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Bundled Session Cards */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Complete Career Package</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Three essential sessions bundled together for comprehensive career transformation
+            </p>
+          </div>
+          <BundledSessionCards />
         </div>
       </section>
 

@@ -69,32 +69,34 @@ const Book = () => {
     const baseDate = new Date();
     baseDate.setDate(baseDate.getDate() + 3); // Start 3 days from now
 
-    const times = ["10:00 AM", "2:30 PM", "6:00 PM"];
-    const sessionNames = [
-      "CV Review & Optimization",
-      "Networking & Referral Strategy",
-      "Future Skills & Interview Prep"
+    // Fixed times: Monday 8-9 PM, Wednesday 8-9 PM, Friday 8-9 PM
+    const sessionConfigs = [
+      { day: 1, name: "CV Review & Optimization", time: "8:00 PM" }, // Monday
+      { day: 3, name: "Networking & Referral Strategy", time: "8:00 PM" }, // Wednesday
+      { day: 5, name: "Future Skills & Interview Prep", time: "8:00 PM" } // Friday
     ];
 
     for (let i = 0; i < 3; i++) {
       const sessionDate = new Date(baseDate);
-      sessionDate.setDate(baseDate.getDate() + (i * 5)); // 5 days apart
       
-      // Skip weekends
-      while (sessionDate.getDay() === 0 || sessionDate.getDay() === 6) {
-        sessionDate.setDate(sessionDate.getDate() + 1);
-      }
+      // Find next occurrence of the target day
+      const currentDay = sessionDate.getDay();
+      const targetDay = sessionConfigs[i].day;
+      let daysUntilTarget = (targetDay - currentDay + 7) % 7;
+      if (daysUntilTarget === 0 && i > 0) daysUntilTarget = 7; // If same day, go to next week
+      
+      sessionDate.setDate(sessionDate.getDate() + daysUntilTarget + (i * 7)); // Weekly schedule
 
       sessions.push({
         number: i + 1,
-        name: sessionNames[i],
+        name: sessionConfigs[i].name,
         date: sessionDate.toLocaleDateString('en-US', { 
           weekday: 'long', 
           month: 'long', 
           day: 'numeric', 
           year: 'numeric' 
         }),
-        time: times[Math.floor(Math.random() * times.length)],
+        time: sessionConfigs[i].time,
         timezone: formData.timezone
       });
     }

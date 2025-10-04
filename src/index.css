@@ -8,24 +8,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Premium Career Coaching Brand Colors */
-    --background: 210 20% 98%;
-    --foreground: 0 0% 20%;
+    /* Premium Career Coaching Brand Colors - Matching Logo */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 0 0% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover-foreground: 0 0% 18%;
 
-    /* Primary Blue - Bright, trustworthy coaching brand */
-    --primary: 217 91% 60%;
+    /* Primary Cyan - Bright logo color #1DB9E5 */
+    --primary: 194 85% 51%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 55%;
+    --primary-hover: 194 85% 45%;
     
-    /* Soft accent blue for subtle backgrounds */
-    --accent-soft: 200 80% 96%;
-    --accent-soft-foreground: 217 91% 40%;
+    /* Soft accent cyan for subtle backgrounds */
+    --accent-soft: 194 85% 96%;
+    --accent-soft-foreground: 194 85% 30%;
 
     /* Secondary - Charcoal for contrast */
     --secondary: 0 0% 96%;
@@ -34,26 +34,28 @@ All colors MUST be HSL.
     --muted: 210 20% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 217 91% 60%;
+    --accent: 194 85% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 194 85% 51%;
 
     --radius: 0.75rem;
 
     /* Gradient overlays */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.95), hsl(217 91% 70% / 0.9));
-    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%), hsl(210 20% 99%));
+    --gradient-hero: linear-gradient(135deg, hsl(194 85% 51% / 0.95), hsl(194 85% 60% / 0.9));
+    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%), hsl(0 0% 99%));
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(194 85% 51% / 0.15), transparent 70%);
     
     /* Shadows for depth */
-    --shadow-soft: 0 2px 8px hsl(217 91% 60% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(217 91% 60% / 0.12);
-    --shadow-large: 0 8px 32px hsl(217 91% 60% / 0.16);
+    --shadow-soft: 0 2px 8px hsl(194 85% 51% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(194 85% 51% / 0.12);
+    --shadow-large: 0 8px 32px hsl(194 85% 51% / 0.16);
+    --shadow-glow: 0 0 40px hsl(194 85% 51% / 0.3);
     
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,12 +72,12 @@ All colors MUST be HSL.
     --popover: 0 0% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 194 85% 51%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 65%;
+    --primary-hover: 194 85% 55%;
 
-    --accent-soft: 217 91% 20%;
-    --accent-soft-foreground: 217 91% 80%;
+    --accent-soft: 194 85% 20%;
+    --accent-soft-foreground: 194 85% 80%;
 
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 98%;
@@ -83,7 +85,7 @@ All colors MUST be HSL.
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 217 91% 60%;
+    --accent: 194 85% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -91,7 +93,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 217 91% 60%;
+    --ring: 194 85% 51%;
   }
 }
 

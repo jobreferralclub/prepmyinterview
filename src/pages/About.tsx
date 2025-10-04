@@ -1,24 +1,21 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Award, Target, Users, TrendingUp, ArrowRight } from "lucide-react";
+import { Award, Target, Users, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const About = () => {
-  const coaches = [
-    {
-      name: "Saranya Ray",
-      role: "Lead Career Coach",
-      experience: "12+ years in talent acquisition and career coaching",
-      expertise: "CV optimization, interview preparation, tech recruitment",
-      bio: "Former senior hiring manager at leading tech companies. Specialized in helping professionals navigate career transitions and land roles at top-tier organizations."
-    },
-    {
-      name: "Industry Expert Panel",
-      role: "Advisory Coaches",
-      experience: "15+ years combined experience",
-      expertise: "Networking strategy, skills development, leadership coaching",
-      bio: "A collective of experienced professionals from Fortune 500 companies and innovative startups, bringing diverse perspectives to your career journey."
-    }
-  ];
+  const coach = {
+    name: "Saranya Roy",
+    role: "Lead Career Coach & Founder",
+    experience: "12+ years in talent acquisition and career coaching",
+    expertise: "CV optimization, interview preparation, tech recruitment, networking strategy",
+    bio: "Former senior hiring manager at leading tech companies with extensive experience in Fortune 500 recruitment. Specialized in helping professionals navigate career transitions and land roles at top-tier organizations. Passionate about empowering ambitious professionals through evidence-based coaching and actionable strategies.",
+    credentials: [
+      "12+ years experience in tech recruitment",
+      "Coached 200+ professionals to career success",
+      "Expert in ATS optimization and interview preparation",
+      "Former hiring manager at Fortune 500 companies"
+    ]
+  };
 
   const outcomes = [
     { metric: "85%", description: "Interview rate increase" },
@@ -93,35 +90,41 @@ const About = () => {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
                 <Users className="h-8 w-8 text-primary" />
-                <h2 className="text-3xl font-bold">Meet Your Coaches</h2>
+                <h2 className="text-3xl font-bold">Meet Your Coach</h2>
               </div>
               <p className="text-lg text-muted-foreground">
-                Guidance from market industry experts with proven track records
+                Guidance from industry expert with proven track record
               </p>
             </div>
 
-            <div className="space-y-8">
-              {coaches.map((coach, index) => (
-                <div
-                  key={index}
-                  className="bg-card p-8 rounded-2xl shadow-medium hover:shadow-large transition-all"
-                >
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Award className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-1">{coach.name}</h3>
-                      <p className="text-primary font-semibold mb-2">{coach.role}</p>
-                      <p className="text-sm text-muted-foreground mb-3">{coach.experience}</p>
-                      <p className="text-sm font-medium text-foreground mb-3">
-                        Expertise: {coach.expertise}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">{coach.bio}</p>
+            <div className="bg-card p-8 md:p-10 rounded-2xl shadow-medium hover:shadow-large transition-all">
+              <div className="flex flex-col md:flex-row items-start gap-6 mb-6">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary-hover flex items-center justify-center flex-shrink-0 shadow-glow">
+                  <Award className="h-12 w-12 text-primary-foreground" />
                 </div>
-              ))}
+                <div className="flex-1">
+                  <h3 className="text-3xl font-bold mb-2">{coach.name}</h3>
+                  <p className="text-primary font-semibold text-lg mb-3">{coach.role}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{coach.experience}</p>
+                  <p className="text-foreground leading-relaxed mb-6">{coach.bio}</p>
+                  <div className="bg-accent-soft p-6 rounded-xl">
+                    <h4 className="font-semibold text-accent-soft-foreground mb-3">Key Credentials</h4>
+                    <ul className="space-y-2">
+                      {coach.credentials.map((credential, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-accent-soft-foreground">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>{credential}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="border-t pt-6">
+                <p className="text-sm font-medium text-foreground">
+                  <span className="text-primary">Expertise Areas:</span> {coach.expertise}
+                </p>
+              </div>
             </div>
           </div>
         </div>

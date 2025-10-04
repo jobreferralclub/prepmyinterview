@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,10 +44,8 @@ const Header = () => {
       {/* Main navigation */}
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary">
-              <span className="text-xl font-bold text-primary-foreground">P</span>
-            </div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img src={logo} alt="PrepMyInterview Logo" className="h-12 w-12 object-contain transition-transform group-hover:scale-110" />
             <span className="text-xl font-bold text-foreground">PrepMyInterview</span>
           </Link>
 
