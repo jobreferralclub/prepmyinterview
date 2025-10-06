@@ -45,7 +45,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="PrepMyInterview Logo" className="h-16 w-16 object-contain transition-transform group-hover:scale-110" />
+            <img src={logo} alt="PrepMyInterview Logo" className="h-14 w-14 object-contain transition-transform group-hover:scale-110" />
             <span className="text-xl font-bold text-foreground">PrepMyInterview</span>
           </Link>
 
